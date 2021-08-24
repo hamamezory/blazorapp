@@ -42,10 +42,10 @@ namespace apptest1.Components
             var response = await HttpClient.PostAsJsonAsync("/api/v2/auth/login", model);
             if (response.IsSuccessStatusCode)
             {
-                //var result = await response.Content.ReadFromJsonAsync<ApiResponse<LoginResult>>();
-                // Store it in local storage 
-                //await Storage.SetItemAsStringAsync("access_token", result.value.Token);
-                //await Storage.SetItemAsync<DateTime>("expiry_date", result.value.ExpiryDate);
+                var result = await response.Content.ReadFromJsonAsync<ApiResponse<LoginResults>>();
+                 //Store it in local storage 
+                await Storage.SetItemAsStringAsync("access_token", result.value.Token);
+                await Storage.SetItemAsync<DateTime>("expiry_date", result.value.ExpiryDate);
 
                 await AuthenticationStateProvider.GetAuthenticationStateAsync();
 
