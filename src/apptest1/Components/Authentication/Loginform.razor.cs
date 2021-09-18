@@ -53,7 +53,7 @@ namespace apptest1.Components
             }
             else
             {
-                var errorResult = await response.Content.ReadFromJsonAsync<ApiErrorResonse>();
+                var errorResult = await response.Content.ReadFromJsonAsync<ApiErrorResponse>();
                 _errorMessage = errorResult.Message;
             }
             _isBusy = false;

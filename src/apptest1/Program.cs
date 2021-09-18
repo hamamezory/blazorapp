@@ -1,3 +1,5 @@
+using apptest1.client.services;
+using apptest1.client.services.Interfaces;
 using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -31,6 +33,7 @@ namespace apptest1
             builder.Services.AddBlazoredLocalStorage();
             builder.Services.AddAuthorizationCore();
             builder.Services.AddScoped<AuthenticationStateProvider, JwtAuthenticationStateProvider>();
+            builder.Services.AddHttpClientServices();
             await builder.Build().RunAsync();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace apptest.shared.Responses
 {
-    public class ApiErrorResonse
+    public class ApiErrorResponse
     {
         public string Message { get; set; }
         public string[] Errors { get; set; }
